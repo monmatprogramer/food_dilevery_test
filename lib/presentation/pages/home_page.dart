@@ -52,7 +52,9 @@ class HomePage extends StatelessWidget {
               child: FloatingActionButton(
                 heroTag: "all",
                 onPressed: () {
-                  context.read<RestaurantBloc>().add(GetRestaurantsEvent());
+                  // context.read<RestaurantBloc>().add(GetRestaurantsEvent());
+                  BlocProvider.of<RestaurantBloc>(context)
+                      .add(GetRestaurantsEvent());
                 },
                 child: const Text("All"),
               ),
