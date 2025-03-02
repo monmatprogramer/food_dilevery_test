@@ -61,7 +61,11 @@ class HomePage extends StatelessWidget {
             right: 0,
             child: FloatingActionButton(
               heroTag: "Featured",
-              onPressed: () {},
+              onPressed: () {
+                context.read<RestaurantBloc>().add(
+                      GetFeaturedRestaurantsEvent(),
+                    );
+              },
               child: const Text("F"),
             ),
           ),
